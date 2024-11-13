@@ -6,18 +6,24 @@ public class KhachHang {
     private String diaChi;
     private int khachHangID;
     private String tenKH;
-//    private List<HoaDon> listHoaDon = new ArrayList<>();
+    private List<HoaDon> listHoaDon = new ArrayList<>();
 
     KhachHang(
             String diaChi,
             int khachHangID,
             String tenKH
-//            List<HoaDon> listHoaDon
     ) {
         this.diaChi = diaChi;
         this.khachHangID = khachHangID;
         this.tenKH = tenKH;
-//        this.listHoaDon = listHoaDon;
+    }
+
+    public void ThemHoaDon( HoaDon tmp ) {
+        listHoaDon.add(tmp);
+    }
+
+    public List<HoaDon> getListHoaDon() {
+        return listHoaDon;
     }
 
     public String getTenKH() {

@@ -13,17 +13,21 @@ public class Main {
 
         KhachHang NVA = new KhachHang("89 Lac Long Quan", 111, "Nguyen Van A");
 
-        HoaDon hoaDonNVA = new HoaDon(200, NVA, "13-11-2024");
+        HoaDon hoaDonNVA1 = new HoaDon(200, NVA, "13-11-2024");
+
+        NVA.ThemHoaDon(hoaDonNVA1);
 
         List<MatHangMua> tmp = new ArrayList<>();
 
-        tmp.add( new MatHangMua(hoaDonNVA, 500, x, 1));
-        tmp.add( new MatHangMua(hoaDonNVA, 501, y, 2));
+        tmp.add( new MatHangMua(hoaDonNVA1, 500, x, 1));
+        tmp.add( new MatHangMua(hoaDonNVA1, 501, y, 2));
 
-        hoaDonNVA.setListMua(tmp);
-        hoaDonNVA.setTongTien();
+        hoaDonNVA1.setListMua(tmp);
+        hoaDonNVA1.setTongTien();
 
-        hoaDonNVA.InHoaDon();
+        for ( HoaDon tmpHoaDon: NVA.getListHoaDon() ) {
+            tmpHoaDon.InHoaDon();
+        }
 
     }
 }

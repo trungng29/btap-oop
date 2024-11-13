@@ -9,12 +9,13 @@ public class HoaDon {
     private KhachHang kh;
     private String ngayBan;
     private Float tongTien = 0.0f;
-    private List<MatHangMua> listMua = new ArrayList<>();
+    private List<MatHangMua> listMua;
 
     public HoaDon(int hoaDonID, KhachHang kh, String ngayBan) {
         this.hoaDonID = hoaDonID;
         this.kh = kh;
         this.ngayBan = ngayBan;
+        this.listMua = new ArrayList<>();
     }
 
     public void setListMua(List<MatHangMua> listMua) {
