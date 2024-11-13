@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class MatHang {
 
     private float gia;
@@ -5,7 +8,7 @@ public class MatHang {
     private int soLuong;
     private String tenMatHang;
 
-    MatHang(
+    public void ThemMatHangVaoKho(
             float gia,
             int matHangID,
             int soLuong,
@@ -15,10 +18,6 @@ public class MatHang {
         this.matHangID = matHangID;
         this.soLuong = soLuong;
         this.tenMatHang = tenMatHang;
-    }
-
-    public MatHang ThemMatHangVaoKho() {
-        return new MatHang(gia, matHangID, soLuong, tenMatHang);
     }
 
     @Override

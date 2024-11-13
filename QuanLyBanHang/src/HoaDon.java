@@ -9,7 +9,7 @@ class HoaDon {
     private float tongTien;
     List<MatHangMua> listMatHangMua;
 
-    HoaDon (
+    public void ThemHoaDon (
             int hoaDonID,
             KhachHang kh,
             String ngayBan,
@@ -22,12 +22,10 @@ class HoaDon {
         this.listMatHangMua = new ArrayList<>();
     }
 
+
+
     public String InHoaDon() {
         return hoaDonID + " " + kh + " " + ngayBan + " " + tongTien;
-    }
-
-    public HoaDon ThemHoaDon() {
-        return new HoaDon(hoaDonID, kh, ngayBan, tongTien);
     }
 
 }
