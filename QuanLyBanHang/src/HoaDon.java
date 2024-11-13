@@ -1,31 +1,43 @@
 import java.util.ArrayList;
 import java.util.List;
 
-class HoaDon {
+public class HoaDon {
+
+    public static List<HoaDon> listHoaDon = new ArrayList<>();
 
     private int hoaDonID;
     private KhachHang kh;
     private String ngayBan;
-    private float tongTien;
-    List<MatHangMua> listMatHangMua;
+    private Float tongTien = 0.0f;
+    private List<MatHangMua> listMua = new ArrayList<>();
 
-    public void ThemHoaDon (
-            int hoaDonID,
-            KhachHang kh,
-            String ngayBan,
-            float tongTien
-    ) {
+    public HoaDon(int hoaDonID, KhachHang kh, String ngayBan) {
         this.hoaDonID = hoaDonID;
         this.kh = kh;
         this.ngayBan = ngayBan;
-        this.tongTien = tongTien;
-        this.listMatHangMua = new ArrayList<>();
     }
 
+    public void setListMua(List<MatHangMua> listMua) {
+        this.listMua = listMua;
+    }
 
+    public void setTongTien() {
+        for ( MatHangMua tmp: listMua ) {
+            tongTien += tmp.getMh().getGia();
+        }
+    }
 
-    public String InHoaDon() {
-        return hoaDonID + " " + kh + " " + ngayBan + " " + tongTien;
+    public void InHoaDon() {
+        System.out.println("_________________________________");
+        System.out.println("Id cua hoa don: " + hoaDonID);
+        System.out.println("Ten khach hang: " + kh.getTenKH());
+        System.out.println("Ngay Ban: " + ngayBan );
+        System.out.println("Tong tien mua: " + tongTien);
+        System.out.println("_________________________________");
+    }
+
+    public void ThemHoaDon() {
+        listHoaDon.add( new HoaDon( hoaDonID, kh, ngayBan ) );
     }
 
 }

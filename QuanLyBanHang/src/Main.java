@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -5,41 +7,23 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
 
-        MatHang x = new MatHang();
-        x.ThemMatHangVaoKho(
-                20.0F,
-                1,
-                10,
-                "x"
-        );
+        MatHang x = new MatHang(20.0f, 1, 20, "Mat hang x");
+        MatHang y = new MatHang(15.0f, 2, 10, "Mat hang y");
+        MatHang z = new MatHang(300.0f, 3, 5, "Mat hang z");
 
-        MatHang y = new MatHang();
-        y.ThemMatHangVaoKho(
-                45.0F,
-                2,
-                50,
-                "y"
-        );
+        KhachHang NVA = new KhachHang("89 Lac Long Quan", 111, "Nguyen Van A");
 
-        MatHang z = new MatHang();
-        z.ThemMatHangVaoKho(
-                300.5F,
-                3,
-                4,
-                "z"
-        );
+        HoaDon hoaDonNVA = new HoaDon(200, NVA, "13-11-2024");
 
-        KhachHang NVA = new KhachHang(
-                "89 Lac Long Quan",
-                292,
-                "Nguyen Van A"
-        );
+        List<MatHangMua> tmp = new ArrayList<>();
 
-        HoaDon hd1 = new HoaDon();
-        hd1.ThemHoaDon(1, NVA, "13-11-2024", 200_000 );
+        tmp.add( new MatHangMua(hoaDonNVA, 500, x, 1));
+        tmp.add( new MatHangMua(hoaDonNVA, 501, y, 2));
 
+        hoaDonNVA.setListMua(tmp);
+        hoaDonNVA.setTongTien();
 
+        hoaDonNVA.InHoaDon();
 
     }
-
 }

@@ -3,29 +3,31 @@ import java.util.List;
 
 public class MatHangMua {
 
+    public static List<MatHangMua> listMatHangMua = new ArrayList<>();;
+
     private HoaDon hd;
     private int matHangMuaID;
     private MatHang mh;
     private int soLuong;
-    private static List<MatHangMua> listMHM = new ArrayList<>();
-
 
     MatHangMua(
             HoaDon hd,
             int matHangMuaID,
             MatHang mh,
-            int soLuong,
-            List<MatHangMua> listMHM
+            int soLuong
     ) {
         this.hd = hd;
         this.matHangMuaID = matHangMuaID;
         this.mh = mh;
         this.soLuong = soLuong;
-        this.listMHM = listMHM;
+    }
+
+    public MatHang getMh() {
+        return mh;
     }
 
     public void ThemMatHangMuaCuaHoaDon() {
-        listMHM.add(new MatHangMua(hd, matHangMuaID, mh, soLuong, listMHM));
+        listMatHangMua.add( new MatHangMua(hd, matHangMuaID, mh, soLuong) );
     }
 
 }

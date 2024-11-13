@@ -3,12 +3,14 @@ import java.util.List;
 
 public class MatHang {
 
+    public static List<MatHang> listMatHang = new ArrayList<>();
+
     private float gia;
     private int matHangID;
     private int soLuong;
     private String tenMatHang;
 
-    public void ThemMatHangVaoKho(
+    MatHang(
             float gia,
             int matHangID,
             int soLuong,
@@ -20,9 +22,12 @@ public class MatHang {
         this.tenMatHang = tenMatHang;
     }
 
-    @Override
-    public String toString() {
-        return matHangID + " " + tenMatHang + " "+ gia + " " + soLuong;
+    public float getGia() {
+        return gia;
+    }
+
+    public void ThemMatHangVaoKho() {
+        listMatHang.add( new MatHang(gia, matHangID, soLuong, tenMatHang) );
     }
 
 }
